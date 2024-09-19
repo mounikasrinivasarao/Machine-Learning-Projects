@@ -18,7 +18,7 @@ Libraries Used:
 
 Installation:
 1. Clone this repository:
-    - git clone https://github.com/your-username/sentiment-analysis.git
+    - git clone [https://github.com/your-username/sentiment-analysis.git](https://github.com/mounikasrinivasarao/Sentimental_Analysis-ML-)
 2. Navigate to the project directory:
     - cd sentiment-analysis
 3. Install the required dependencies:
