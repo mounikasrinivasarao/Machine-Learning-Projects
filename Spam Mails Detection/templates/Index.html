@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spam Email Detection</title>
+  <style>
+    /* Your CSS styles here */
+    * {
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-image: url('https://media.istockphoto.com/id/1282806068/photo/email-marketing-concept-person-reading-e-mail-on-smartphone.jpg?s=612x612&w=0&k=20&c=NDoQ6NcTNAYi4Xsn30XVmB-QXdr907PTOQPnqLNdAlc=');
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h1 {
+      font-size: 5rem;
+      color: rgb(23, 22, 22);
+      text-shadow: 2px 2px #f1ecec;
+    }
+    p {
+      text-align: center;
+    }
+    .form-container {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .form-container textarea {
+      width: 100%;
+      height: 200px;
+      border-radius: 5px;
+      border: none;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+    .form-container input[type="submit"] {
+      display: inline-block;
+      margin: 20px 10px 0;
+      width: 200px;
+      height: 40px;
+      border-radius: 5px;
+      border: none;
+      background-color: rgb(225, 17, 17);
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    .form-container input[type="submit"]:hover {
+      background-color: #8b5e5e;
+    }
+    .form-container input[type="button"] {
+      display: inline-block;
+      margin-top: 20px;
+      width: 100px;
+      height: 40px;
+      border-radius: 5px;
+      border: none;
+      background-color: #333;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    .form-container input[type="button"]:hover {
+      background-color: #555;
+    }
+    .result {
+      background-color: rgba(9, 250, 77, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+    .result span {
+      font-weight: bold;
+      color: rgba(18, 255, 125, 0.578);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>MAIL CUSTOMER SEGMENTATION</h1>
+    </div>
+    <div class="form-container">
+      <form action="/predict" method="POST" onsubmit="return validateForm()">
+        <textarea
+          name="input_mail"
+          id="emailTextarea"
+          placeholder="Enter the email here..."
+        >{{ input_mail }}</textarea>
+        <input type="submit" value="Submit">
+        <input type="button" value="Close" onclick="closeForm()">
+      </form>
+    </div>
+    <div id="resultDiv"  style="display:{% if k %}block{% else %}none{% endif %}">
+      {% if k %}
+      <h1><p>{{k}}</p></h1>
+      {% endif %}
+    </div>
+  </div>
+  <div style="text-align: center; margin-top: 20px;">
+    <a href="https://github.com/mounikasrinivasarao" style="margin-right: 20px; text-decoration: none; color: #333; font-size: 28px;font-weight: bold;">GitHub</a>
+    <a href="https://www.linkedin.com/in/mounika-valurouthu-1687b3228/" style="text-decoration: none; color: #333; font-size: 28px;font-weight: bold;">LinkedIn</a>
+</div>
+
+  <script>
+    function validateForm() {
+      var inputMail = document.getElementById("emailTextarea").value;
+      if (inputMail.trim() === "") {
+        alert("Please enter an email.");
+        return false;
+      }
+      return true;
+    }
+
+    function closeForm() {
+      // Clear the text in the textarea
+      document.getElementById("emailTextarea").value = "";
+      // Hide the resultDiv
+      document.getElementById("resultDiv").style.display = "none";
+    }
+  </script>
+</body>
+</html>

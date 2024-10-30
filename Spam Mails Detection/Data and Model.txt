@@ -1,0 +1,16 @@
+Email detection works by using machine learning algorithms to analyze email messages and classify them as either spam or not spam. These algorithms are trained using large sets of labeled email data, where each email is labeled as either spam or ham.
+
+
+Data and Model
+Training Data
+The spam email detection model was trained using a labeled dataset of email messages. The dataset contains two main columns:
+
+Message: This column contains the text content of the email messages.
+Category: This column indicates whether each email is categorized as 'spam' or 'ham' (not spam).
+The training dataset was prepared by collecting a diverse set of email messages, manually labeling them as spam or not spam, and then splitting the dataset into a training set and a testing set to evaluate model performance.
+
+SVM - SUPPORT VECTOR MACHINE
+the SVM model uses patterns in the words of emails to determine if they're spam or ham.
+
+Common Splitting Strategies:
+Train-Test Split: A simple and common approach is to randomly split the dataset into a training set (e.g., 70-80% of the data) and a testing set (e.g., 20-30% of the data).
